@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import FisheyeDataFR from '../../data/FisheyeDataFR.json';
+
+import HomeHeader from '../header/header';
+import TagByPhotographerId from '../tag/tag';
 import './home.scss';
 
+//Return all tags rather than photographers for build navigation tags
 function getTags(){
     let arrayOfTags = [];
     FisheyeDataFR.photographes.forEach(photographer => {
@@ -13,31 +17,18 @@ function getTags(){
     });
     return arrayOfTags;
 }
-
-
 let listTags = getTags();
 
+
+//Return header with list of tags with <HomeHeader>
+//Return photographers list rather than json data with <main>
+//Return tag by photographer <TagByPhotographerId>
 class Home extends Component {
+
     render() {
-        return ( 
+        return (
             <div>
-                <header className="container header" role="banner">
-                    <a href={`${window.location.origin}/index.html`}><img src={`${window.location.origin}/img/logo.png`} alt="Fisheye Home page" className="header__logo"/></a>
-                    <nav role="navigation" aria-label="photographer categories">
-                        <div className="header__navigation__list">
-                            {listTags.map((tag,index) => {
-                                return (
-                                    <button className="button button-group" type="button" role="presentation" tabIndex="0" key={index}>
-                                        <a href={`${window.location.origin}/index.html`} title={`Tag ${tag}`} aria-label={`Tag Photographer ${tag}`}>
-                                        <span aria-hidden="false">{`#${tag}`}</span></a>
-                                    </button>
-                                )
-                            })}
-                        </div>
-                    </nav>
-                    <h1 className="header__title">Nos photographes</h1>
-                </header>
-                
+                <HomeHeader tags={listTags}></HomeHeader>
                 <main className="container__main">
                 {FisheyeDataFR.photographes.map((photographer, index) => {
                     return (
@@ -53,13 +44,14 @@ class Home extends Component {
                             <p className="photographer__text__desc">{photographer.tagline}</p>
                             <p className="photographer__text__price">{`${photographer.prix} /jour`}</p>
                         </div>
-                        <ul className="photographer__tag"></ul>
-                    </div>    
-                    )                 
+                        <TagByPhotographerId photographer={photographer}></TagByPhotographerId>
+
+                        </div>    
+                    );               
                 })} 
                 </main>
             </div>
-        )
+        );
     }
 };
 
