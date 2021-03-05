@@ -11,6 +11,7 @@ This version does not include Redux
 ``` bash
 # Install dependencies for server
 npm install
+npm install node-sass@4.14.1
 
 # Install dependencies for client
 npm run client-install
