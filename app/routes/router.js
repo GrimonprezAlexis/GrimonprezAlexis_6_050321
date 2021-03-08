@@ -1,4 +1,5 @@
 const cors = require('cors');
+const FisheyeDataFR = require('../../data/FisheyeDataFR.json');
 
 module.exports = (router) => {
 
@@ -10,6 +11,25 @@ module.exports = (router) => {
         ];
 
         res.json(customers);
+    });
+
+    //Return all photographers
+    router.get('/photographers', cors(), (req, res, next) => {
+        res.json(FisheyeDataFR.photographes);
+    });
+
+
+    //Return all tags rather than photographers for build <TagsNavigation></TagsNavigation>
+    router.get('/photographers/tags', cors(), (req, res, next) => {
+        const photographersTags = [];
+        FisheyeDataFR.photographes.forEach(photographer => {
+            photographer.tags.forEach(tag => {
+                if(photographersTags.indexOf(tag) === -1) {
+                    photographersTags.push(tag);
+                }
+            });
+        });
+        res.send(photographersTags);
     });
 
     return router; // Return the router object to server

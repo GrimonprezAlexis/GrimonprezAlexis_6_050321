@@ -1,56 +1,66 @@
-import React, { Component } from 'react';
-import FisheyeDataFR from '../../data/FisheyeDataFR.json';
+import React, { Component, useState } from 'react';
 
-import HomeHeader from '../header/header';
-import TagByPhotographerId from '../tag/tag';
+import TagsNavigation from './TagsNavigation';
+import PhotographerList from './PhotographerList';
+
 import './home.scss';
-
-//Return all tags rather than photographers for build navigation tags
-function getTags(){
-    let arrayOfTags = [];
-    FisheyeDataFR.photographes.forEach(photographer => {
-        photographer.tags.forEach(tag => {
-            if(arrayOfTags.indexOf(tag) === -1) {
-                arrayOfTags.push(tag);
-            }
-        });
-    });
-    return arrayOfTags;
-}
-let listTags = getTags();
 
 
 //Return header with list of tags with <HomeHeader>
 //Return photographers list rather than json data with <main>
 //Return tag by photographer <TagByPhotographerId>
+
 class Home extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            photographers: [],
+            photographersTags: [],
+            selectedTag: ''
+        }
+        this.handleFilterByTag = this.handleFilterByTag.bind(this);
+    }
+
+    componentDidMount() {
+        fetch('/api/photographers')
+            .then(res => res.json())
+            .then(photographers => 
+                this.setState({ photographers }, () => console.log('Photographers fetched...', photographers)));
+
+        fetch('/api/photographers/tags')
+            .then(res => res.json())
+            .then(photographersTags => 
+                this.setState({ photographersTags }, () => console.log('Tags fetched...', photographersTags)));
+    }
+
+
+    handleFilterByTag(e) {
+        e.preventDefault();
+        this.setState({ selectedTag: e.target.textContent.slice(1).toLowerCase() });
+        console.log('Your selected tag is: ', e.target.textContent);
+
+
+        const photographersFiltered = photographers.filter(photographer => { 
+            return photographer.tags.indexOf(this.state.selectedTag) > -1; 
+        });
+        this.setState({ photographers: photographersFiltered  }, () => console.log('Photographers filtered...', photographersTags)));
+    }
 
     render() {
-        return (
-            <div>
-                <HomeHeader tags={listTags}></HomeHeader>
-                <main className="container__main">
-                {FisheyeDataFR.photographes.map((photographer, index) => {
-                    return (
-                    <div className="photographer" id={`photographer-${photographer.id}`} key={index}>
-                        <div className="photographer__img">
-                            <a href="todo.html" className="photographer__img__link">
-                                <img src={`${window.location.origin}/img/Photographers_ID_Photos/${photographer.portrait}`} alt={photographer.nom} />
-                                <h2>{photographer.nom}</h2>
-                            </a>
-                        </div>
-                        <div className="photographer__text">
-                            <p className="photographer__text__localisation">{photographer.ville}, {photographer.country || photographer.pays}</p>
-                            <p className="photographer__text__desc">{photographer.tagline}</p>
-                            <p className="photographer__text__price">{`${photographer.prix} /jour`}</p>
-                        </div>
-                        <TagByPhotographerId photographer={photographer}></TagByPhotographerId>
+        const photographers = this.state.photographers;
+        const photographersTags = this.state.photographersTags;
 
-                        </div>    
-                    );               
-                })} 
-                </main>
-            </div>
+        return (
+            <>
+                <header className="container header" role="banner">
+                    <a href={`${window.location.origin}/index.html`}>
+                        <img src={`${window.location.origin}/img/logo.png`}  alt="Fisheye Home page" className="header__logo"/>
+                    </a>
+                    <TagsNavigation tags={photographersTags} handleFilterByTag={this.handleFilterByTag}></TagsNavigation>
+                    <h1 className="header__title">Nos photographes</h1>
+                </header>
+                <PhotographerList photographers={photographersFiltered}></PhotographerList>
+            </>
         );
     }
 };
