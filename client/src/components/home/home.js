@@ -7,35 +7,38 @@ export default function Home() {
 
   const [photographers, setPhotographers] = useState([]);
   const [photographersTags, setPhotographersTags] = useState([]);
+  const [photographersFiltered, setSearchPhotographers] = useState([]);
+
 
     useEffect(() => {
         fetchPhotographers();
         fetchPhotographersTags();
     }, []);
 
+    //Get the photographers from API
     const fetchPhotographers = async () => {
         const response = await fetch('api/photographers');
         const data = await response.json();
         setPhotographers(data);
+        setSearchPhotographers(data);
     }
 
+    //Get all tags rather than list photographers
     const fetchPhotographersTags = async () => {
         const response = await fetch('api/photographers/tags');
         const data = await response.json();
        setPhotographersTags(data);
     }
 
+    //Filter photographer by selectedTag
     const handleFilterByTag = (e) => {
         e.preventDefault();
         const selectedTag = e.target.textContent.slice(1).toLowerCase();
-        console.log('Your selected tag is: ', e.target.textContent);
-
-        const photographersFiltered = photographers.filter(photographer => { 
+        const wantedPhotographers = photographers.filter(photographer => { 
             return photographer.tags.indexOf(selectedTag) > -1; 
         });
-        setPhotographers(photographersFiltered);
+        setSearchPhotographers(wantedPhotographers);
     }
-
 
 
     return (
@@ -49,7 +52,7 @@ export default function Home() {
             </header>
             <main className="container__main">
                 {
-                    photographers.map(( p, index ) => (
+                    photographersFiltered.map(( p, index ) => (
                         <PhotographerList  photographer={p} key={index}/> 
                     ))
                 }
