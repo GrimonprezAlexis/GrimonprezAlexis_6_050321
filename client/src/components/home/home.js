@@ -1,68 +1,59 @@
-import React, { Component, useState } from 'react';
-
+import React, { useState, useEffect } from "react";
 import TagsNavigation from './TagsNavigation';
 import PhotographerList from './PhotographerList';
-
 import './home.scss';
 
+export default function Home() {
 
-//Return header with list of tags with <HomeHeader>
-//Return photographers list rather than json data with <main>
-//Return tag by photographer <TagByPhotographerId>
+  const [photographers, setPhotographers] = useState([]);
+  const [photographersTags, setPhotographersTags] = useState([]);
 
-class Home extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            photographers: [],
-            photographersTags: [],
-            selectedTag: ''
-        }
-        this.handleFilterByTag = this.handleFilterByTag.bind(this);
+    useEffect(() => {
+        fetchPhotographers();
+        fetchPhotographersTags();
+    }, []);
+
+    const fetchPhotographers = async () => {
+        const response = await fetch('api/photographers');
+        const data = await response.json();
+        setPhotographers(data);
     }
 
-    componentDidMount() {
-        fetch('/api/photographers')
-            .then(res => res.json())
-            .then(photographers => 
-                this.setState({ photographers }, () => console.log('Photographers fetched...', photographers)));
-
-        fetch('/api/photographers/tags')
-            .then(res => res.json())
-            .then(photographersTags => 
-                this.setState({ photographersTags }, () => console.log('Tags fetched...', photographersTags)));
+    const fetchPhotographersTags = async () => {
+        const response = await fetch('api/photographers/tags');
+        const data = await response.json();
+       setPhotographersTags(data);
     }
 
-
-    handleFilterByTag(e) {
+    const handleFilterByTag = (e) => {
         e.preventDefault();
-        this.setState({ selectedTag: e.target.textContent.slice(1).toLowerCase() });
+        const selectedTag = e.target.textContent.slice(1).toLowerCase();
         console.log('Your selected tag is: ', e.target.textContent);
 
-
         const photographersFiltered = photographers.filter(photographer => { 
-            return photographer.tags.indexOf(this.state.selectedTag) > -1; 
+            return photographer.tags.indexOf(selectedTag) > -1; 
         });
-        this.setState({ photographers: photographersFiltered  }, () => console.log('Photographers filtered...', photographersTags)));
+        setPhotographers(photographersFiltered);
     }
 
-    render() {
-        const photographers = this.state.photographers;
-        const photographersTags = this.state.photographersTags;
 
-        return (
-            <>
-                <header className="container header" role="banner">
-                    <a href={`${window.location.origin}/index.html`}>
-                        <img src={`${window.location.origin}/img/logo.png`}  alt="Fisheye Home page" className="header__logo"/>
-                    </a>
-                    <TagsNavigation tags={photographersTags} handleFilterByTag={this.handleFilterByTag}></TagsNavigation>
-                    <h1 className="header__title">Nos photographes</h1>
-                </header>
-                <PhotographerList photographers={photographersFiltered}></PhotographerList>
-            </>
-        );
-    }
-};
 
-export default Home;
+    return (
+        <>
+            <header className="container header" role="banner">
+                <a href={`${window.location.origin}/index.html`}>
+                    <img src={`${window.location.origin}/img/logo.png`}  alt="Fisheye Home page" className="header__logo"/>
+                </a>
+                <TagsNavigation tags={photographersTags} handleFilterByTag={handleFilterByTag} />
+                <h1 className="header__title">Nos photographes</h1>
+            </header>
+            <main className="container__main">
+                {
+                    photographers.map(( p, index ) => (
+                        <PhotographerList  photographer={p} key={index}/> 
+                    ))
+                }
+            </main>
+        </>
+    )
+}

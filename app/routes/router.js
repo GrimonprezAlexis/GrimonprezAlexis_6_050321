@@ -15,7 +15,7 @@ module.exports = (router) => {
 
     //Return all photographers
     router.get('/photographers', cors(), (req, res, next) => {
-        res.json(FisheyeDataFR.photographes);
+        res.send(FisheyeDataFR.photographes);
     });
 
 
@@ -29,7 +29,7 @@ module.exports = (router) => {
                 }
             });
         });
-        res.send(photographersTags);
+        res.send(JSON.stringify(photographersTags));
     });
 
     return router; // Return the router object to server
