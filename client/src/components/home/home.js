@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 import TagsNavigation from './TagsNavigation';
 import PhotographerList from './PhotographerList';
-import './home.scss';
+import './Home.scss';
 
-export default function Home() {
+import { Link } from 'react-router-dom';
+
+
+const Home = ({ match }) => {
 
   const [photographers, setPhotographers] = useState([]);
   const [photographersTags, setPhotographersTags] = useState([]);
   const [photographersFiltered, setSearchPhotographers] = useState([]);
 
-
+    //replace componentDidMonth
     useEffect(() => {
         fetchPhotographers();
         fetchPhotographersTags();
@@ -43,20 +46,20 @@ export default function Home() {
 
     return (
         <>
-            <header className="container header" role="banner">
-                <a href={`${window.location.origin}/index.html`}>
-                    <img src={`${window.location.origin}/img/logo.png`}  alt="Fisheye Home page" className="header__logo"/>
-                </a>
-                <TagsNavigation tags={photographersTags} handleFilterByTag={handleFilterByTag} />
-                <h1 className="header__title">Nos photographes</h1>
-            </header>
-            <main className="container__main">
-                {
-                    photographersFiltered.map(( p, index ) => (
-                        <PhotographerList  photographer={p} key={index}/> 
-                    ))
-                }
-            </main>
+        <header className="container header" role="banner">
+            <Link to={`${match.url}`}>
+                <img src={`${window.location.origin}/img/logo.png`}  alt="Fisheye Home page" className="header__logo"/>
+            </Link>
+            <TagsNavigation tags={photographersTags} handleFilterByTag={handleFilterByTag} />
+            <h1 className="header__title">Nos photographes</h1>
+        </header>
+        <main className="container__main">{
+            photographersFiltered.map(( p, index ) => (
+                <PhotographerList  photographer={p} key={index}/> 
+            ))
+        }</main>
         </>
     )
 }
+
+export default Home;

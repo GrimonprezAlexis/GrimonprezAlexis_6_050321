@@ -32,6 +32,14 @@ module.exports = (router) => {
         res.send(JSON.stringify(photographersTags));
     });
 
+    //http://localhost:5000/api/photographers/243
+    router.get('/photographers/:id', cors(), (req, res, next) => {
+        let photographer = FisheyeDataFR.photographes.filter((photographer) => { 
+            return photographer.id == req.params.id;
+        });
+        res.send(photographer);
+    })
+
     return router; // Return the router object to server
 
 

@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 import './App.scss';
 
-import Customers from './components/customers/customers';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 import Home from './components/home/Home';
+import PhotographerDetail from './components/photographer/PhotographerDetail';
+
 
 class App extends Component {
   render(){
     return (
-      <div>
-        <Home />
-      </div>
+      <>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/:id" component={PhotographerDetail} />
+          </Switch>
+        </Router>
+      </>
     );
   }
 };
