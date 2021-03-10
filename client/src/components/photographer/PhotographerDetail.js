@@ -7,18 +7,30 @@ import './PhotographerDetail.scss';
 
 const PhotographerDetail = ({ match }) => {
     const [photographer, setPhotographer] = useState([]);
+    const [medias, setMedias] = useState([]);
+
 
     //replace componentDidMonth
     useEffect(() => {
-        fetchPhotographer();
+        fetchPhotographerById();
+        fetchMediaByPhotographerId();
     }, []);
 
     //Get the photographer by ID from API
-    const fetchPhotographer = async () => {
+    const fetchPhotographerById = async () => {
         const response = await fetch(`api/photographers/${match.params.id}`);
         const data = await response.json();
         setPhotographer(data);
     };
+
+    //Get the medias by ID from API
+    const fetchMediaByPhotographerId = async () => {
+        const response = await fetch(`api/photographers/${match.params.id}/medias`);
+        const data = await response.json();
+        setMedias(data);
+    };
+
+
 
     return (
         <>
@@ -28,15 +40,16 @@ const PhotographerDetail = ({ match }) => {
             </Link>
         </header>
 
-        {photographer.map((photographer, index) => {
+        <main>
+        {photographer.map((p, index) => {
             return (
                 <div className="main__photographer" key={`p-${index}`}>
                     <div className="">
-                        <h1>{photographer.nom}</h1>
-                        <p className="main__photographer__localisation">{photographer.ville}, {photographer.country || photographer.pays}</p>
-                        <p className="main__photographer__tagline">{photographer.tagline}</p>
+                        <h1>{p.nom}</h1>
+                        <p className="main__photographer__localisation">{p.ville}, {p.country || p.pays}</p>
+                        <p className="main__photographer__tagline">{p.tagline}</p>
                         <ul className="main__photographer__tag">
-                            {photographer.tags.map((tag, index) => {
+                            {p.tags.map((tag, index) => {
                                 return (
                                     <li key={index}><span aria-hidden="false">{`#${tag}`}</span></li>
                                 );
@@ -47,7 +60,7 @@ const PhotographerDetail = ({ match }) => {
                         <button tabIndex="0">Contactez-moi</button>
                     </div>
                     <div className="photographer__img__link">
-                        <img src={`${window.location.origin}/img/Photographers_ID_Photos/${photographer.portrait}`} alt={photographer.nom} />
+                        <img src={`${window.location.origin}/img/Photographers_ID_Photos/${p.portrait}`} alt={p.nom} />
                     </div>
                 </div>
             )
@@ -66,6 +79,36 @@ const PhotographerDetail = ({ match }) => {
                 <option value="" disabled="disabled"></option>
             </select>
         </div>
+
+        <section className="galerie">
+        {medias.map((media, index) => {
+            return (
+                <>
+                <div className="galerie__item" key={`galerie-${index}`}>
+                    {media.image ? 
+                        <img src={`${window.location.origin}/img/${media.photographerName}/${media.image}`}></img>
+                        : <video controls>
+                            <source src={`${window.location.origin}/img/${media.photographerName}/${media.video}`} type="video/mp4"></source>
+                        </video>                    
+                    }
+                    <div className="galerie__detail">
+                        <div className="galerie__detail-text">
+                            <p className="galerie__detail__text">Arc-en-cie</p>
+                            <div className="galerie__detail__price-like">
+                                <p className="galerie__detail__price">{`${media.prix}`}</p>
+                                <p className="galerie__detail__like">{`${media.aime}`}</p>
+                                <img src={`${window.location.origin}/img/like.png`}></img>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </>
+            )
+        })}
+        </section>
+        </main>
+
+
         </>
     );
 }
