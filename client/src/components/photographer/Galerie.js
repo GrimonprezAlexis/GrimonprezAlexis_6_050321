@@ -38,8 +38,8 @@ const Galerie = ({ photographerId, photographerPrice }) => {
         <>
         <section className="galerie">
             <div className="galerie__totalLikes">
-                <div>
-                    <p class="galerie__totalLikes__number">{totalLikes}</p>
+                <div className="galerie__totalLikes__number">
+                    <p>{totalLikes}</p>
                     <button class="galerie__detail__addLike"><img src="http://localhost:3000/img/like_black.png" alt="like" /></button>
                 </div>
                 <div>
