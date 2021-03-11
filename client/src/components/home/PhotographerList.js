@@ -20,7 +20,7 @@ const PhotographerList = ({ photographer }) => {
                 <div className="photographer__text">
                     <p className="photographer__text__localisation">{photographer.ville}, {photographer.country || photographer.pays}</p>
                     <p className="photographer__text__desc">{photographer.tagline}</p>
-                    <p className="photographer__text__price">{`${photographer.prix} /jour`}</p>
+                    <p className="photographer__text__price">{`${photographer.prix}€ /jour`}</p>
                 </div>
                 <ul className="photographer__tag">
                     {photographer.tags.map((tag,index) => {

@@ -35,10 +35,10 @@ module.exports = (router) => {
 
     //http://localhost:5000/api/photographers/243
     router.get('/photographers/:id', cors(), (req, res, next) => {
-        let photographer = FisheyeDataFR.photographes.filter((photographer) => { 
+        let photographer = FisheyeDataFR.photographes.find((photographer) => { 
             return photographer.id == req.params.id;
         });
-        res.send(photographer);
+        res.status(200).send(photographer);
     });
 
     //http://localhost:5000/api/photographers/82/medias
@@ -54,12 +54,13 @@ module.exports = (router) => {
                 media.titre = imageOrVideo.replace(/_/g, ' ').split('.').slice(0, -1).join('.');
             }
 
+
             media.photographerName = photographer.nom.split(' ')[0]; //Ellie-Rose Wilkens -> Ellie-Rose
             return media.photographeId == req.params.id;
         });
-
-        res.send(medias);
+        res.status(200).send(medias);
     });
+
 
 
     return router; // Return the router object to server

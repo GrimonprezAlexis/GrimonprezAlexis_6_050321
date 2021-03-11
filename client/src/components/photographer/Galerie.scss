@@ -1,0 +1,112 @@
+@import "../../css/main.scss"; //Reset CSS
+
+
+.galerie {    
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0rem 6rem;
+    align-items: center;
+
+
+    &__totalLikes {
+        background-color: $color__secondary-light;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.8rem;
+        font-size: 20px;
+        width: 25%;
+        position: fixed;
+        bottom: 0;
+        right: 5rem;
+        z-index: 10;
+
+
+        &__number {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+
+
+
+
+    &__item {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+        padding: 2rem;
+        cursor: pointer;
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+
+        &__image {
+            width: 380px;
+            height: 350px;
+            object-fit: cover;
+            &:hover {
+	            opacity: .8;
+            }
+
+        }
+        &__video {
+            width: 380px;
+            height: 350px;
+            object-fit: cover;
+            &:hover {
+	            opacity: .8;
+            }
+
+        }
+    }
+
+    &__detail {
+        line-height: 31px;
+        font-size: 20px;
+        color: #901C1C;
+
+        img {
+            width: auto;
+            height: auto;
+        }
+
+        video {
+            width: auto;
+            height: auto;
+        }
+    }
+
+    &__detail-text {
+        display: flex;
+        justify-content: space-between;
+        cursor: auto;
+
+        p {
+            color:#901C1C;
+        }
+    }
+
+    &__detail__price-like {
+        display: flex;
+        align-items: center;
+    }
+
+    &__detail__price {
+        margin-right: 3rem;
+    }
+
+    &__detail__addLike {
+        background: none;
+        border: none;
+        margin-top: 4px;
+        cursor: pointer;
+        transition:all 0.3s ease;
+
+        &:hover {
+            -webkit-animation: swing 1s ease;
+            animation: swing 1s ease;
+            -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+        }
+    }
+
+}
