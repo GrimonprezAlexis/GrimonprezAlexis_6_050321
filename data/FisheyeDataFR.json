@@ -67,7 +67,7 @@
       "photographeId": 82,
       "image": "Fashion_Yellow_Beach.jpg",
       "tags": ["mode"],
-      "aime": 62,
+      "like": 62,
       "date": "08/12/2011",
       "prix": 55
     },
@@ -76,7 +76,7 @@
       "photographeId": 82,
       "image": "Fashion_Urban_Jungle.jpg",
       "tags": ["mode"],
-      "aime": 11,
+      "like": 11,
       "date": "06/11/2011",
       "prix": 55
     },
@@ -85,16 +85,16 @@
       "photographeId": 82,
       "image": "Fashion_Pattern_on_Pattern.jpg",
       "tags": ["mode"],
-      "aime": 72,
+      "like": 72,
       "date": "12/08/2013",
       "prix": 55
     },
     {
       "id": 9275938,
       "photographeId": 82,
-      "image": "Event-_eddingGazebo.jpg",
+      "image": "Event_WeddingGazebo.jpg",
       "tags": ["événements"],
-      "aime": 69,
+      "like": 69,
       "date": "2018-02-22",
       "prix": 55
     },
@@ -103,7 +103,7 @@
       "photographeId": 82,
       "image": "Event_Sparklers.jpg",
       "tags": ["événements"],
-      "aime": 2,
+      "like": 2,
       "date": "25/05/2020",
       "prix": 55
     },
@@ -112,16 +112,16 @@
       "photographeId": 82,
       "image": "Event_18thAnniversary.jpg",
       "tags": ["événements"],
-      "aime": 33,
+      "like": 33,
       "date": "2019-06-12",
       "prix": 55
     },
     {
       "id": 8328953,
       "photographeId": 82,
-      "vidéo": "Art_Wooden_Horse_Sculpture.mp4",
+      "video": "Art_Wooden_Horse_Sculpture.mp4",
       "tags": ["art"],
-      "aime": 24,
+      "like": 24,
       "date": "08/12/2011",
       "prix": 100
     },
@@ -130,7 +130,7 @@
       "photographeId": 82,
       "image": "Art_Triangle_Man.jpg",
       "tags": ["art"],
-      "aime": 88,
+      "like": 88,
       "date": "2007-05-07",
       "prix": 55
     },
@@ -139,7 +139,7 @@
       "photographeId": 82,
       "image": "Art_Purple_light.jpg",
       "tags": ["art"],
-      "aime": 24,
+      "like": 24,
       "date": "2018-05-05",
       "prix": 55
     },
@@ -148,7 +148,7 @@
       "photographeId": 82,
       "image": "Art_Mine.jpg",
       "tags": ["art"],
-      "aime": 75,
+      "like": 75,
       "date": "25/11/2019",
       "prix": 55
     },
@@ -158,7 +158,7 @@
       "photographeId": 925,
       "image": "Sport_2000_with_8.jpg",
       "tags": ["sport"],
-      "aime": 52,
+      "like": 52,
       "date": "30/02/2013",
       "prix": 70
     },
@@ -167,7 +167,7 @@
       "photographeId": 925,
       "image": "Fashion_Wings.jpg",
       "tags": ["mode"],
-      "aime": 58,
+      "like": 58,
       "date": "17/07/2018",
       "prix": 70
     },
@@ -176,7 +176,7 @@
       "photographeId": 925,
       "image": "Fashion_Melody_Red_on_Stripes.jpg",
       "tags": ["mode"],
-      "aime": 11,
+      "like": 11,
       "date": "2019-08-12",
       "prix": 70
     },
@@ -185,7 +185,7 @@
       "photographeId": 925,
       "image": "Event_VentureConference.jpg",
       "tags": ["événements"],
-      "aime": 2,
+      "like": 2,
       "date": "02/01/2019",
       "prix": 70
     },
@@ -194,7 +194,7 @@
       "photographeId": 925,
       "image": "Event_ProductPitchjpg",
       "tags": ["événements"],
-      "aime": 3,
+      "like": 3,
       "date": "2019-05-20",
       "prix": 70
     },
@@ -203,7 +203,7 @@
       "photographeId": 925,
       "image": "Event_KeyboardCheck.jpg",
       "tags": ["événements"],
-      "aime": 52,
+      "like": 52,
       "date": "18/07/2019",
       "prix": 70
     },
@@ -212,7 +212,7 @@
       "photographeId": 925,
       "image": "Event_Emcee.jpg",
       "tags": ["événements"],
-      "aime": 23,
+      "like": 23,
       "date": "2018-02-22",
       "prix": 70
     },
@@ -221,7 +221,7 @@
       "photographeId": 925,
       "image": "Animals_Majesty.jpg",
       "tags": ["animaux"],
-      "aime": 52,
+      "like": 52,
       "date": "13/03/2017",
       "prix": 70
     },
@@ -230,7 +230,7 @@
       "photographeId": 925,
       "video": "Animals_Puppiness.mp4",
       "tags": ["animaux"],
-      "aime": 52,
+      "like": 52,
       "date": "2016-06-12",
       "prix": 70
     },
@@ -238,9 +238,9 @@
     {
       "id": 394583434,
       "photographeId": 527,
-      "vidéo": "Travel_Rock_Mountains.mp4",
+      "video": "Travel_Rock_Mountains.mp4",
       "tags": ["voyage"],
-      "aime": 23,
+      "like": 23,
       "date": "18/03/2017",
       "prix": 45
     },
@@ -249,7 +249,7 @@
       "photographeId": 527,
       "image": "Travel_Outdoor_Baths.jpg",
       "tags": ["voyage"],
-      "aime": 101,
+      "like": 101,
       "date": "2017-04-03",
       "prix": 45
     },
@@ -258,7 +258,7 @@
       "photographeId": 527,
       "image": "Travel_Road_into_Hill.jpg",
       "tags": ["voyage"],
-      "aime": 99,
+      "like": 99,
       "date": "2018-04-30",
       "prix": 45
     },
@@ -267,7 +267,7 @@
       "photographeId": 527,
       "image": "Travel_Bridge_into_Forest.jpg",
       "tags": ["voyage"],
-      "aime": 34,
+      "like": 34,
       "date": "05/04/2016",
       "prix": 45
     },
@@ -276,7 +276,7 @@
       "photographeId": 527,
       "image": "Travel_Boat_Wanderer.jpg",
       "tags": ["voyage"],
-      "aime": 23,
+      "like": 23,
       "date": "18/03/2017",
       "prix": 45
     },
@@ -285,7 +285,7 @@
       "photographeId": 527,
       "image": "Portrait_Sunkissed.jpg",
       "tags": ["portrait"],
-      "aime": 66,
+      "like": 66,
       "date": "2018-05-24",
       "prix": 45
     },
@@ -294,7 +294,7 @@
       "photographeId": 527,
       "image": "Portrait_Shaw.jpg",
       "tags": ["portait"],
-      "aime": 52,
+      "like": 52,
       "date": "21/04/2017",
       "prix": 45
     },
@@ -303,7 +303,7 @@
       "photographeId": 527,
       "image": "Portrait_Alexandra.jpg",
       "tags": ["portait"],
-      "aime": 95,
+      "like": 95,
       "date": "2018-11-02",
       "prix": 45
     },
@@ -312,7 +312,7 @@
       "photographeId": 527,
       "image": "Portrait_AfternoonBreak.jpg",
       "tags": ["portait"],
-      "aime": 25,
+      "like": 25,
       "date": "02/01/2019",
       "prix": 45
     },
@@ -322,7 +322,7 @@
       "photographeId": 243,
       "image": "Travel_Lonesome.jpg",
       "tags": ["voyage"],
-      "aime": 88,
+      "like": 88,
       "date": "2019-02-03",
       "prix": 45
     },
@@ -331,7 +331,7 @@
       "photographeId": 243,
       "image": "Travel_HillsideColor.jpg",
       "tags": ["voyage"],
-      "aime": 85,
+      "like": 85,
       "date": "2019-04-03",
       "prix": 45
     },
@@ -340,7 +340,7 @@
       "photographeId": 243,
       "image": "Portrait_Wednesday.jpg",
       "tags": ["portait"],
-      "aime": 34,
+      "like": 34,
       "date": "2019-04-07",
       "prix": 45
     },
@@ -349,7 +349,7 @@
       "photographeId": 243,
       "image": "Portrait_Nora.jpg",
       "tags": ["portait"],
-      "aime": 63,
+      "like": 63,
       "date": "2019-04-07",
       "prix": 45
     },
@@ -358,7 +358,7 @@
       "photographeId": 243,
       "image": "Portrait_Background.jpg",
       "tags": ["portait"],
-      "aime": 55,
+      "like": 55,
       "date": "2019-06-20",
       "prix": 45
     },
@@ -367,7 +367,7 @@
       "photographeId": 243,
       "image": "Event_SeasideWedding.jpg",
       "tags": ["événements"],
-      "aime": 25,
+      "like": 25,
       "date": "21/06/2019",
       "prix": 45
     },
@@ -376,7 +376,7 @@
       "photographeId": 243,
       "image": "Event_PintoWedding.jpg",
       "tags": ["événements"],
-      "aime": 52,
+      "like": 52,
       "date": "2019-06-25",
       "prix": 45
     },
@@ -385,7 +385,7 @@
       "photographeId": 243,
       "image": "Event_BenevidesWedding.jpg",
       "tags": ["événements"],
-      "aime": 77,
+      "like": 77,
       "date": "2019-06-28",
       "prix": 45
     },
@@ -394,16 +394,16 @@
       "photographeId": 243,
       "video": "Animals_Wild_Horses_in_the_mountains.mp4",
       "tags": ["animaux"],
-      "aime": 142,
+      "like": 142,
       "date": "23/08/2019",
       "prix": 60
     },
     {
       "id": 95234343,
       "photographeId": 243,
-      "image": "Animals_Rainbow.jpg.jpg",
+      "image": "Animals_Rainbow.jpg",
       "tags": ["animaux"],
-      "aime": 59,
+      "like": 59,
       "date": "2019-07-02",
       "prix": 60
     },
@@ -413,7 +413,7 @@
       "photographeId": 195,
       "image": "Travel_Tower.jpg",
       "tags": ["voyage"],
-      "aime": 25,
+      "like": 25,
       "date": "2019-04-03",
       "prix": 60
     },
@@ -422,7 +422,7 @@
       "photographeId": 195,
       "image": "Travel_SunsetonCanals.jpg",
       "tags": ["voyage"],
-      "aime": 53,
+      "like": 53,
       "date": "2019-05-06",
       "prix": 60
     },
@@ -431,7 +431,7 @@
       "photographeId": 195,
       "image": "Travel_OpenMountain.jpg",
       "tags": ["voyage"],
-      "aime": 33,
+      "like": 33,
       "date": "2019-05-12",
       "prix": 60
     },
@@ -440,7 +440,7 @@
       "photographeId": 195,
       "image": "Travel_Bike_and_Stair.jpg",
       "tags": ["voyage"],
-      "aime": 53,
+      "like": 53,
       "date": "2019-06-20",
       "prix": 60
     },
@@ -449,7 +449,7 @@
       "photographeId": 195,
       "image": "Travel_Adventure_Door.jpg",
       "tags": ["voyage"],
-      "aime": 63,
+      "like": 63,
       "date": "2019-06-26",
       "prix": 60
     },
@@ -458,7 +458,7 @@
       "photographeId": 195,
       "image": "Architecture_Contrast.jpg",
       "tags": ["architecture"],
-      "aime": 52,
+      "like": 52,
       "date": "2019-06-30",
       "prix": 60
     },
@@ -467,7 +467,7 @@
       "photographeId": 195,
       "image": "Architecture_On_a_hill.jpg",
       "tags": ["architecture"],
-      "aime": 63,
+      "like": 63,
       "date": "20/07/2019",
       "prix": 60
     },
@@ -476,16 +476,16 @@
       "photographeId": 195,
       "image": "Architecture_Dome.jpg",
       "tags": ["architecture"],
-      "aime": 88,
+      "like": 88,
       "date": "05/01/2020",
       "prix": 60
     },
     {
       "id": 9259398453,
       "photographeId": 195,
-      "vidéo": "Architecture_coverr_circle_empty_highway_in_buenos_aires_587740985637.mp4",
+      "video": "Architecture_coverr_circle_empty_highway_in_buenos_aires_587740985637.mp4",
       "tags": ["architecture"],
-      "aime": 57,
+      "like": 57,
       "date": "20/01/2020",
       "prix": 65
     },
@@ -494,7 +494,7 @@
       "photographeId": 195,
       "image": "Architecture_Corner_Room.jpg",
       "tags": ["architecture"],
-      "aime": 54,
+      "like": 54,
       "date": "05/05/2020",
       "prix": 60
     },
@@ -504,7 +504,7 @@
       "photographeId": 930,
       "video": "Sport_Tricks_in_the_air.mp4",
       "tags": ["sport"],
-      "aime": 150,
+      "like": 150,
       "date": "2018-02-30",
       "prix": 70
     },
@@ -513,7 +513,7 @@
       "photographeId": 930,
       "image": "Sport_Next_Hold.jpg",
       "tags": ["sport"],
-      "aime": 101,
+      "like": 101,
       "date": "2018-03-05",
       "prix": 65
     },
@@ -522,7 +522,7 @@
       "photographeId": 930,
       "image": "sport_water_tunnel.jpg",
       "tags": ["sport"],
-      "aime": 103,
+      "like": 103,
       "date": "2018-03-10",
       "prix": 70
     },
@@ -531,7 +531,7 @@
       "photographeId": 930,
       "image": "Sport_Sky_Cross.jpg",
       "tags": ["sport"],
-      "aime": 77,
+      "like": 77,
       "date": "16/04/2018",
       "prix": 50
     },
@@ -540,7 +540,7 @@
       "photographeId": 930,
       "image": "Sport_Race_End.jpg",
       "tags": ["sport"],
-      "aime": 88,
+      "like": 88,
       "date": "2018-04-22",
       "prix": 65
     },
@@ -549,7 +549,7 @@
       "photographeId": 930,
       "image": "Sport_Jump.jpg",
       "tags": ["sport"],
-      "aime": 95,
+      "like": 95,
       "date": "2018-04-27",
       "prix": 70
     },
@@ -558,7 +558,7 @@
       "photographeId": 930,
       "image": "Architecture_White_Light.jpg",
       "tags": ["architecture"],
-      "aime": 52,
+      "like": 52,
       "date": "2018-05-03",
       "prix": 75
     },
@@ -567,7 +567,7 @@
       "photographeId": 930,
       "image": "Architecture_Water_on_Modern.jpg",
       "tags": ["architecture"],
-      "aime": 55,
+      "like": 55,
       "date": "2018-05-10",
       "prix": 72
     },
@@ -576,7 +576,7 @@
       "photographeId": 930,
       "image": "Architecture_Horseshoe.jpg",
       "tags": ["architecture"],
-      "aime": 85,
+      "like": 85,
       "date": "15/05/2018",
       "prix": 71
     },
@@ -585,7 +585,7 @@
       "photographeId": 930,
       "image": "Architecture_Cross_Bar.jpg",
       "tags": ["architecture"],
-      "aime": 66,
+      "like": 66,
       "date": "20/05/2018",
       "prix": 58
     },
@@ -594,7 +594,7 @@
       "photographeId": 930,
       "image": "Architecture_Connected_Curves.jpg",
       "tags": ["architecture"],
-      "aime": 79,
+      "like": 79,
       "date": "21/05/2018",
       "prix": 80
     }

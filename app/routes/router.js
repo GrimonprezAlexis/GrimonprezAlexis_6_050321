@@ -41,20 +41,23 @@ module.exports = (router) => {
         res.send(photographer);
     });
 
-    //http://localhost:5000/api/photographers/243/media
+    //http://localhost:5000/api/photographers/82/medias
     router.get('/photographers/:id/medias', cors(), (req, res, next) => {
-        let photographer = FisheyeDataFR.photographes.find((photographer) => { 
-            return photographer.id == req.params.id;
-        });
-        
-        let medias = FisheyeDataFR.médias.filter((media) => { 
+
+        let photographer = _.find(FisheyeDataFR.photographes, (p) => { return p.id == req.params.id; });
+        let medias = _.filter(FisheyeDataFR.médias, (media) => { 
+
+            //Add property titre based on image or video
+            //Art_Purple_light.jpg --> Art Purple light
+            if(media.image || media.video) {
+                let imageOrVideo = media.image || media.video;
+                media.titre = imageOrVideo.replace(/_/g, ' ').split('.').slice(0, -1).join('.');
+            }
+
             media.photographerName = photographer.nom.split(' ')[0]; //Ellie-Rose Wilkens -> Ellie-Rose
             return media.photographeId == req.params.id;
         });
 
-
-
-        
         res.send(medias);
     });
 

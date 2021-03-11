@@ -43,7 +43,7 @@ const PhotographerDetail = ({ match }) => {
         <main>
         {photographer.map((p, index) => {
             return (
-                <div className="main__photographer" key={`p-${index}`}>
+                <div className="main__photographer" key={`photographe-detail-${index}`}>
                     <div className="">
                         <h1>{p.nom}</h1>
                         <p className="main__photographer__localisation">{p.ville}, {p.country || p.pays}</p>
@@ -84,20 +84,20 @@ const PhotographerDetail = ({ match }) => {
         {medias.map((media, index) => {
             return (
                 <>
-                <div className="galerie__item" key={`galerie-${index}`}>
+                <div className={`galerie__item`} key={`galerie-${index}`}>
                     {media.image ? 
-                        <img src={`${window.location.origin}/img/${media.photographerName}/${media.image}`}></img>
+                        <img src={`${window.location.origin}/img/${media.photographerName}/${media.image}`} alt={`${media.titre}`}></img>
                         : <video controls>
                             <source src={`${window.location.origin}/img/${media.photographerName}/${media.video}`} type="video/mp4"></source>
                         </video>                    
                     }
                     <div className="galerie__detail">
                         <div className="galerie__detail-text">
-                            <p className="galerie__detail__text">Arc-en-cie</p>
+                            <p className="galerie__detail__text">{`${media.titre}`}</p>
                             <div className="galerie__detail__price-like">
                                 <p className="galerie__detail__price">{`${media.prix}`}</p>
-                                <p className="galerie__detail__like">{`${media.aime}`}</p>
-                                <img src={`${window.location.origin}/img/like.png`}></img>
+                                <p className="galerie__detail__like">{`${media.like}`}</p>
+                                <img src={`${window.location.origin}/img/like.png`} alt="like"></img>
                             </div>
                         </div>
                     </div>

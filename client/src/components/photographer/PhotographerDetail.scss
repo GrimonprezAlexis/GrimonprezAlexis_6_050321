@@ -116,6 +116,12 @@
         flex: 0 0 33.333333%;
         max-width: 33.333333%;
         padding: 2rem;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
 
         img {
             width: 380px;
@@ -132,7 +138,7 @@
 
     .galerie__detail {
         line-height: 31px;
-        font-size: 24px;
+        font-size: 1rem;
         color: #901C1C;
 
         img {
@@ -151,7 +157,7 @@
         justify-content: space-between;
 
         p {
-            color:901C1C;
+            color:#901C1C;
         }
     }
 
