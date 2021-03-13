@@ -32,10 +32,34 @@ const Galerie = ({ photographerId, photographerPrice }) => {
         setMedias(sortedMedia);
     };
 
+
+    const handleSort = (e) => {
+        let wantedMedias = _.orderBy(medias, e.target.value);
+
+        //date, popularity == like, title
+        if(e.target.value == 'like') wantedMedias.reverse() //Les plus populaires selon nombre de likes
+        setMedias(wantedMedias);
+    }
+
     let totalLikes = _.sumBy(medias, 'like');
 
     return (
         <>
+        <div className="listbox__container">
+            <label htmlFor="order" className="listbox__label">Trier par</label>
+            <select name="order" id="order" className="listbox__select"
+                tabIndex="0"  aria-activedescendant="order"
+                aria-labelledby="Order by" aria-label="Order by" onChange={handleSort}>
+                <option value="" disabled="disabled"></option>
+                <option value="date">Date</option>
+                <option value="" disabled="disabled" className="white">─────────</option>
+                <option value="like">Popularité</option>
+                <option value="" disabled="disabled" className="white">─────────</option>
+                <option value="titre">Titre</option>
+                <option value="" disabled="disabled"></option>
+            </select>
+        </div>
+
         <section className="galerie">
             <div className="galerie__totalLikes">
                 <div className="galerie__totalLikes__number">
@@ -50,6 +74,7 @@ const Galerie = ({ photographerId, photographerPrice }) => {
             {medias.map((media, index) => {
                 return (
                     <>
+
                     <div className={`galerie__item`} key={`galerie-${index}`}>
                         {media.image 
                             ? 
@@ -66,7 +91,7 @@ const Galerie = ({ photographerId, photographerPrice }) => {
                                 <div className="galerie__detail__price-like">
                                     <p className="galerie__detail__price">{`${media.prix}`}€</p>
                                     <p className="galerie__detail__like">{`${media.like}`}</p>
-                                    <button className="galerie__detail__addLike" onClick={() => handleLike(media.id)}>
+                                    <button className="galerie__detail__addLike" onClick={() => handleLike()}>
                                         <img src={`${window.location.origin}/img/like.png`} alt="like" />
                                     </button>
                                 </div>

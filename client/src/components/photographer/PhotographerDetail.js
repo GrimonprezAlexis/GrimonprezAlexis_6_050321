@@ -52,21 +52,6 @@ const PhotographerDetail = ({ match }) => {
                     <img src={`${window.location.origin}/img/Photographers_ID_Photos/${photographer.portrait}`} alt={photographer.nom} />
                 </div>
             </div>
-
-            <div className="listbox__container">
-                <label htmlFor="order" className="listbox__label">Trier par</label>
-                <select name="order" id="order" className="listbox__select"
-                    tabIndex="0"  aria-activedescendant="order"
-                    aria-labelledby="Order by" aria-label="Order by">
-                    <option value="" disabled="disabled"></option>
-                    <option value="date">Date</option>
-                    <option value="" disabled="disabled" className="white">─────────</option>
-                    <option value="popularity">Popularité</option>
-                    <option value="" disabled="disabled" className="white">─────────</option>
-                    <option value="title">Titre</option>
-                    <option value="" disabled="disabled"></option>
-                </select>
-            </div>
         
             <Galerie photographerId={match.params.id} photographerPrice={photographer.prix}/>
         </main>
