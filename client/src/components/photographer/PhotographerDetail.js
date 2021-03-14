@@ -13,7 +13,7 @@ const PhotographerDetail = ({ match }) => {
     //replace componentDidMonth
     useEffect(() => {
         fetchPhotographerById();
-    }, {});
+    }, []);
 
     //Get the photographer by ID from API
     const fetchPhotographerById = async () => {
@@ -30,7 +30,6 @@ const PhotographerDetail = ({ match }) => {
                 <img src={`${window.location.origin}/img/logo.png`}  alt="Fisheye Home page" className="header__logo"/>
             </Link>
         </header>
-
         <main>
             <div className="main__photographer">
                 <div className="">
@@ -52,11 +51,8 @@ const PhotographerDetail = ({ match }) => {
                     <img src={`${window.location.origin}/img/Photographers_ID_Photos/${photographer.portrait}`} alt={photographer.nom} />
                 </div>
             </div>
-        
             <Galerie photographerId={match.params.id} photographerPrice={photographer.prix}/>
         </main>
-
-
         </>
     );
 }

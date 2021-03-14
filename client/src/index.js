@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import SimpleReactLightbox from 'simple-react-lightbox'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+ReactDOM.render(<SimpleReactLightbox><App /></SimpleReactLightbox>, document.getElementById('root'));
 registerServiceWorker();

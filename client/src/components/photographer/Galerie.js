@@ -1,11 +1,39 @@
 import React, { useState, useEffect } from "react";
 import _ from 'lodash';
 
+//https://www.npmjs.com/package/simple-react-lightbox#options
+import { SRLWrapper } from "simple-react-lightbox";
+
 import './Galerie.scss';
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+
+library.add(faHeart);
 
 const Galerie = ({ photographerId, photographerPrice }) => {    
     const [medias, setMedias] = useState([]);
     
+    const options = {
+    settings: {
+        autoplaySpeed: 3000,
+        boxShadow: 'none',
+        disableKeyboardControls: false,
+        disablePanzoom: false,
+        disableWheelControls: false,
+        hideControlsAfter: 3000,
+        lightboxTransitionSpeed: 0.3,
+        lightboxTransitionTimingFunction: 'linear',
+        overlayColor: 'rgba(30, 30, 30, 0.9)',
+        slideAnimationType: 'fade',
+        slideSpringValues: [300, 50],
+        slideTransitionSpeed: 0.6,
+        slideTransitionTimingFunction: 'linear',
+        usingPreact: false
+    }
+    };
+
     //replace componentDidMonth
     useEffect(() => {
         fetchMediaByPhotographerId();
@@ -18,17 +46,14 @@ const Galerie = ({ photographerId, photographerPrice }) => {
         setMedias(_.orderBy(data, 'date'));
     };
     
+    //Add likes onclick
     const handleLike = (id) => {
         const newMedias = [...medias];
-
         const mediasUntouched = newMedias.filter(m => m.id !== id);
         const mediaToUpdate = _.find(newMedias, {id});
         mediaToUpdate.like++;
-
         mediasUntouched.push(mediaToUpdate);
         const sortedMedia = _.orderBy(mediasUntouched, 'date');
-
-        //const sortedMedia = [mediasUntouched, mediaUpdated].sort(m => m.id);
         setMedias(sortedMedia);
     };
 
@@ -37,7 +62,7 @@ const Galerie = ({ photographerId, photographerPrice }) => {
         let wantedMedias = _.orderBy(medias, e.target.value);
 
         //date, popularity == like, title
-        if(e.target.value == 'like') wantedMedias.reverse() //Les plus populaires selon nombre de likes
+        if(e.target.value === 'like') wantedMedias.reverse() //Les plus populaires selon nombre de likes
         setMedias(wantedMedias);
     }
 
@@ -59,12 +84,12 @@ const Galerie = ({ photographerId, photographerPrice }) => {
                 <option value="" disabled="disabled"></option>
             </select>
         </div>
-
-        <section className="galerie">
+        <SRLWrapper options={options}>
+        <section className="galerie" aria-label="image closeup view">
             <div className="galerie__totalLikes">
                 <div className="galerie__totalLikes__number">
                     <p>{totalLikes}</p>
-                    <button class="galerie__detail__addLike"><img src="http://localhost:3000/img/like_black.png" alt="like" /></button>
+                    <button className="galerie__detail__addLike"><img src="http://localhost:3000/img/like_black.png" alt="like" /></button>
                 </div>
                 <div>
                     <p>{photographerPrice} € /jour</p>
@@ -74,17 +99,18 @@ const Galerie = ({ photographerId, photographerPrice }) => {
             {medias.map((media, index) => {
                 return (
                     <>
-
-                    <div className={`galerie__item`} key={`galerie-${index}`}>
+                    <div className={`galerie__item`} key={index}>
+                        <div>
                         {media.image 
                             ? 
                             <img src={`${window.location.origin}/img/${media.photographerName}/${media.image}`} 
-                            alt={`${media.titre}`} className="galerie__item__image"></img>
-                            : 
+                            alt={`${media.titre}`} className="galerie__item__image" />
+                            :
                             <video controls className="galerie__item__video">
                                 <source src={`${window.location.origin}/img/${media.photographerName}/${media.video}`} type="video/mp4"></source>
-                            </video>                    
+                            </video>
                         }
+                        </div>
                         <div className="galerie__detail">
                             <div className="galerie__detail-text">
                                 <p className="galerie__detail__text">{`${media.titre}`}</p>
@@ -92,7 +118,7 @@ const Galerie = ({ photographerId, photographerPrice }) => {
                                     <p className="galerie__detail__price">{`${media.prix}`}€</p>
                                     <p className="galerie__detail__like">{`${media.like}`}</p>
                                     <button className="galerie__detail__addLike" onClick={() => handleLike()}>
-                                        <img src={`${window.location.origin}/img/like.png`} alt="like" />
+                                        <FontAwesomeIcon icon={faHeart} />
                                     </button>
                                 </div>
                             </div>
@@ -102,6 +128,7 @@ const Galerie = ({ photographerId, photographerPrice }) => {
                 )
             })}
         </section>
+        </SRLWrapper>
         </>
     );
 }
