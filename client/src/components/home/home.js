@@ -46,16 +46,18 @@ const Home = ({ match }) => {
 
     return (
         <>
-        <header className="container header" role="banner">
+        <header className="header" role="banner">
             <Link to={`${match.url}`}>
                 <img src={`${window.location.origin}/img/logo.png`}  alt="Fisheye Home page" className="header__logo"/>
             </Link>
+
             <TagsNavigation tags={photographersTags} handleFilterByTag={handleFilterByTag} />
+
             <h1 className="header__title">Nos photographes</h1>
         </header>
         <main className="container__main">{
             photographersFiltered.map(( p, index ) => (
-                <PhotographerList  photographer={p} key={index}/> 
+                <PhotographerList photographer={p} key={index}/> 
             ))
         }</main>
         </>

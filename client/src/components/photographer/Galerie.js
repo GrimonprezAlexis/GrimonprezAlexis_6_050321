@@ -98,7 +98,6 @@ const Galerie = ({ photographerId, photographerPrice }) => {
 
             {medias.map((media, index) => {
                 return (
-                    <>
                     <div className={`galerie__item`} key={index}>
                         <div>
                         {media.image 
@@ -117,14 +116,13 @@ const Galerie = ({ photographerId, photographerPrice }) => {
                                 <div className="galerie__detail__price-like">
                                     <p className="galerie__detail__price">{`${media.prix}`}€</p>
                                     <p className="galerie__detail__like">{`${media.like}`}</p>
-                                    <button className="galerie__detail__addLike" onClick={() => handleLike()}>
+                                    <button className="galerie__detail__addLike" onClick={() => handleLike()} aria-labelledby="Likes">
                                         <FontAwesomeIcon icon={faHeart} />
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    </>
                 )
             })}
         </section>

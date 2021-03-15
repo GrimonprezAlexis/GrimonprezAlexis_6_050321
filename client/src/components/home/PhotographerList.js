@@ -6,7 +6,7 @@ import PhotographerDetail from '../photographer/PhotographerDetail';
 
 //Return photographer list
 //The list can be render filtered by tag
-const PhotographerList = ({ photographer }) => {
+const PhotographerList = ({ photographer}) => {
     return (
         <>
         <Route path="/:id" component={PhotographerDetail} />

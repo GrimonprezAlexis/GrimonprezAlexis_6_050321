@@ -24,7 +24,8 @@
 }
 
 .header {
-    display: flex;
+    display: grid;
+    grid-template-areas: "logo navigation title";
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
@@ -32,11 +33,13 @@
 
     &__logo {
         height: min-content;
+        grid-area: logo;
     }
 
     &__navigation__list {
         display: flex;
         flex-flow: row wrap;
+        grid-area: navigation;
 
         button {
             background: none;
@@ -68,6 +71,7 @@
     &__title {
         color:$color__primary;
         font-size: 36px;
+        grid-area: title;
     }
 }
 
