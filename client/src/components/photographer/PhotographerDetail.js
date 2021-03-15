@@ -47,7 +47,7 @@ const PhotographerDetail = ({ match }) => {
         </header>
         <main>
             <div className="main__photographer">
-                <div className="">
+                <div className="main__photographer__width">
                     <h1>{photographer.nom}</h1>
                     <p className="main__photographer__localisation">{photographer.ville}, {photographer.country || photographer.pays}</p>
                     <p className="main__photographer__tagline">{photographer.tagline}</p>

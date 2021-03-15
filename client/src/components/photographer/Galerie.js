@@ -116,7 +116,7 @@ const Galerie = ({ photographerId, photographerPrice }) => {
                                 <div className="galerie__detail__price-like">
                                     <p className="galerie__detail__price">{`${media.prix}`}€</p>
                                     <p className="galerie__detail__like">{`${media.like}`}</p>
-                                    <button className="galerie__detail__addLike" onClick={() => handleLike()} aria-labelledby="Likes">
+                                    <button className="galerie__detail__addLike" onClick={() => handleLike(media.id)} aria-labelledby="Likes">
                                         <FontAwesomeIcon icon={faHeart} />
                                     </button>
                                 </div>

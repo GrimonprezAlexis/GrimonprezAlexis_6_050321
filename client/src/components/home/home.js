@@ -46,6 +46,10 @@ const Home = ({ match }) => {
 
     return (
         <>
+        <div className="cta__main" id="scrollToMain">
+            <a href="#main" className="cta__main__scroll">Passer au contenu</a>
+        </div>
+
         <header className="header" role="banner">
             <Link to={`${match.url}`}>
                 <img src={`${window.location.origin}/img/logo.png`}  alt="Fisheye Home page" className="header__logo"/>
@@ -55,7 +59,7 @@ const Home = ({ match }) => {
 
             <h1 className="header__title">Nos photographes</h1>
         </header>
-        <main className="container__main">{
+        <main className="container__main" id="main">{
             photographersFiltered.map(( p, index ) => (
                 <PhotographerList photographer={p} key={index}/> 
             ))
