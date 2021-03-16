@@ -164,12 +164,6 @@ svg.svg-inline--fa.fa-heart {
         }
     }
 
-
-    .galerie__totalLikes {
-        display: none;
-    }
-
-
     .photographer__img__link {
         margin-top: -3rem;
 
@@ -186,13 +180,13 @@ svg.svg-inline--fa.fa-heart {
 
 
     .galerie {
-        flex-flow: column wrap;
         padding: 0 1rem;
+        flex-wrap: wrap;
 
         &__item {
-            flex: 0 0 100%;
-            max-width: 100%;
-            padding: .5rem 0;
+/*             flex: 0 0 100%;
+            max-width: 100%; */
+            padding: .5rem;
 
             &__image {
                 height: 200px;
@@ -202,6 +196,10 @@ svg.svg-inline--fa.fa-heart {
         &__detail {
             font-size: 14px;
             line-height: 18px;
+        }
+
+        &__totalLikes {
+            display: none;
         }
     }
 
@@ -229,4 +227,18 @@ svg.svg-inline--fa.fa-heart {
         margin-top: 15px;
     }
 
+}
+
+
+@media screen and (min-width: 320px) and (max-width:767px){
+    .galerie {
+        padding: 0 1rem;
+        flex-flow: column wrap;
+
+        &__item {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding: .5rem;
+        }
+    }
 }

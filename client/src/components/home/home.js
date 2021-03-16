@@ -11,8 +11,10 @@ const Home = ({ match }) => {
   const [photographers, setPhotographers] = useState([]);
   const [photographersTags, setPhotographersTags] = useState([]);
   const [photographersFiltered, setSearchPhotographers] = useState([]);
+  const [clickedItem, setClickedItem] = useState(null);
 
-    //replace componentDidMonth
+
+  //replace componentDidMonth
     useEffect(() => {
         fetchPhotographers();
         fetchPhotographersTags();
@@ -41,6 +43,8 @@ const Home = ({ match }) => {
             return photographer.tags.indexOf(selectedTag) > -1; 
         });
         setSearchPhotographers(wantedPhotographers);
+        let tagEvent = e ? parseInt(e.target.parentElement.id, 10) : null;
+        setClickedItem(tagEvent);
     }
 
 
@@ -55,7 +59,7 @@ const Home = ({ match }) => {
                 <img src={`${window.location.origin}/img/logo.png`}  alt="Fisheye Home page" className="header__logo"/>
             </Link>
 
-            <TagsNavigation tags={photographersTags} handleFilterByTag={handleFilterByTag} />
+            <TagsNavigation tags={photographersTags} handleFilterByTag={handleFilterByTag} clickedItem={clickedItem}/>
 
             <h1 className="header__title">Nos photographes</h1>
         </header>
