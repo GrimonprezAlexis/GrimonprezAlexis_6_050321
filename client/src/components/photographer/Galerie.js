@@ -4,7 +4,7 @@ import _ from 'lodash';
 //https://www.npmjs.com/package/simple-react-lightbox#options
 import { SRLWrapper } from "simple-react-lightbox";
 
-import './Galerie.scss';
+import './galerie.scss';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
@@ -89,7 +89,9 @@ const Galerie = ({ photographerId, photographerPrice }) => {
             <div className="galerie__totalLikes">
                 <div className="galerie__totalLikes__number">
                     <p>{totalLikes}</p>
-                    <button className="galerie__detail__addLike"><img src="http://localhost:3000/img/like_black.png" alt="like" /></button>
+                    <button className="galerie__detail__addLike">
+                        <img src={`${window.location.origin}/img/like_black.png`}  alt="Like" className="header__logo"/>
+                    </button>
                 </div>
                 <div>
                     <p>{photographerPrice} € /jour</p>

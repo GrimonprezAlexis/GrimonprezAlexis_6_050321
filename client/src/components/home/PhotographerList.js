@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { Route, Link } from 'react-router-dom';
-import PhotographerDetail from '../photographer/PhotographerDetail';
 
 
 //Return photographer list
@@ -9,7 +8,6 @@ import PhotographerDetail from '../photographer/PhotographerDetail';
 const PhotographerList = ({ photographer}) => {
     return (
         <>
-        <Route path="/:id" component={PhotographerDetail} />
         <div className="photographer" id={`photographer-${photographer.id}`}>
                 <div className="photographer__img">
                     <Link to={`/${photographer.id}`} className="photographer__img__link">

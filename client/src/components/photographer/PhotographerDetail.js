@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 
-import '../home/Home.scss'; 
-import './PhotographerDetail.scss';
+import '../home/home.scss'; 
+import './photographerDetail.scss';
 
-import Galerie from './Galerie';
+import Galerie from './galerie';
 
 
 import Button from '@material-ui/core/Button';

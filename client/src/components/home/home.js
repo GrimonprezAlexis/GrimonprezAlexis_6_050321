@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import TagsNavigation from './TagsNavigation';
-import PhotographerList from './PhotographerList';
-import './Home.scss';
+import TagsNavigation from './tagsNavigation';
+import PhotographerList from './photographerList';
+import './home.scss';
 
 import { Link } from 'react-router-dom';
 

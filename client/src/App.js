@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './App.scss';
 
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Home from './components/home/home';
+import PhotographerDetail from './components/photographer/photographerDetail';
 
-import Home from './components/home/Home';
-import PhotographerDetail from './components/photographer/PhotographerDetail';
 
 
 class App extends Component {
