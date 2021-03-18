@@ -42,8 +42,7 @@ Brad Traversy
 
 This project is licensed under the MIT License
 
-
-### A propos
+# A propos
 Projet 6 - Créez un site accessible pour une plateforme de photographes
 - FishEye est un site web qui permet aux photographes indépendants de présenter leurs meilleurs travauxest un site web qui permet aux photographes indépendants de présenter leurs meilleurs travaux
 
