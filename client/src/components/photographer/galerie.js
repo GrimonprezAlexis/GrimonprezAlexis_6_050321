@@ -105,7 +105,7 @@ const Galerie = ({ photographerId, photographerPrice }) => {
                         {media.image 
                             ? 
                             <img src={`${window.location.origin}/img/${media.photographerName}/${media.image}`} 
-                            alt={`${media.titre}`} className="galerie__item__image" />
+                            alt={`${media.titre}`} className="galerie__item__image" aria-labelledby={`image ${media.image}`}/>
                             :
                             <video controls className="galerie__item__video">
                                 <source src={`${window.location.origin}/img/${media.photographerName}/${media.video}`} type="video/mp4"></source>
@@ -114,10 +114,10 @@ const Galerie = ({ photographerId, photographerPrice }) => {
                         </div>
                         <div className="galerie__detail">
                             <div className="galerie__detail-text">
-                                <p className="galerie__detail__text">{`${media.titre}`}</p>
+                                <p className="galerie__detail__text" aria-labelledby={`${media.titre}`}>{`${media.titre}`}</p>
                                 <div className="galerie__detail__price-like">
-                                    <p className="galerie__detail__price">{`${media.prix}`}€</p>
-                                    <p className="galerie__detail__like">{`${media.like}`}</p>
+                                    <p className="galerie__detail__price" aria-labelledby={`${media.prix}`}>{`${media.prix}`}€</p>
+                                    <p className="galerie__detail__like" aria-labelledby={`${media.like}`}>{`${media.like}`}</p>
                                     <button className="galerie__detail__addLike" onClick={() => handleLike(media.id)} aria-labelledby="Likes">
                                         <FontAwesomeIcon icon={faHeart} />
                                     </button>
