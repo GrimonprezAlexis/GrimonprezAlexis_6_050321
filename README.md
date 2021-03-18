@@ -73,4 +73,5 @@ HTML, CSS, Javascript, Github
 
 
 ### Hébergement
+> Heroku
 [#Projet 6 - Fisheye](https://fisheye-app.herokuapp.com/)
