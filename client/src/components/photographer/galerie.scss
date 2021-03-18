@@ -146,6 +146,10 @@ svg.svg-inline--fa.fa-heart {
                 padding: 0.1rem 0.7rem;
                 font-size: 18px;
                 line-height: 23px;
+                &:focus {
+                    outline-color: black;
+                }
+
             }
         }
 

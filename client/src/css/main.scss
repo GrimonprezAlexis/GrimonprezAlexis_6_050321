@@ -63,5 +63,5 @@ a {
     color: inherit;
 }
 input:focus, button:focus{
-    outline: none;
+    outline-color: $color__primary;
 }
