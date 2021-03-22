@@ -246,3 +246,29 @@ svg.svg-inline--fa.fa-heart {
         }
     }
 }
+
+@media screen and (min-width: 1440px){
+    .galerie {
+        padding: 0rem 3rem;
+        justify-content: space-evenly;
+
+        &__item {
+            flex: auto;
+            max-width: max-content;
+        }
+    }
+}
+
+
+@media screen and (min-width: 2560px){
+    #header__photographer {
+        display: inline-grid;
+    }
+
+    .galerie {
+        justify-content: normal;
+    }
+    .galerie__totalLikes {
+        right: 20rem;
+    }
+}
