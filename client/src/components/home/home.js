@@ -54,7 +54,7 @@ const Home = ({ match }) => {
             <a href="#main" className="cta__main__scroll">Passer au contenu</a>
         </div>
 
-        <header className="header" role="banner">
+        <header className="header" role="banner" id="tag_">
             <Link to={`${match.url}`}>
                 <img src={`${window.location.origin}/img/logo.png`}  alt="Fisheye Home page" className="header__logo"/>
             </Link>

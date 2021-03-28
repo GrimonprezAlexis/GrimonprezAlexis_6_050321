@@ -60,7 +60,7 @@ const PhotographerDetail = ({ match }) => {
                     </ul>
                 </div>
                 <div className="main__photographer__button">
-                    <button tabIndex="0" onClick={handleClickOpen} aria-labelledby="Contactez-moi">Contactez-moi</button>
+                    <button tabIndex="0" onClick={handleClickOpen} aria-label="Contactez-moi" aria-labelledby="Contactez-moi">Contactez-moi</button>
                 </div>
                 {
                     photographer.portrait 

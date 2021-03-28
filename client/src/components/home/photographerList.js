@@ -11,7 +11,7 @@ const PhotographerList = ({ photographer}) => {
         <div className="photographer" id={`photographer-${photographer.id}`}>
                 <div className="photographer__img">
                     <Link to={`/${photographer.id}`} className="photographer__img__link">
-                        <img src={`${window.location.origin}/img/Photographers_ID_Photos/${photographer.portrait}`} alt={photographer.nom} />
+                        <img src={`${window.location.origin}/img/Photographers_ID_Photos/${photographer.portrait}`} alt={`${photographer.nom} photographer`} />
                         <h2>{photographer.nom}</h2>
                     </Link>
                 </div>
